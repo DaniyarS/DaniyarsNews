@@ -6,12 +6,12 @@
 
     <fragment
         android:id="@+id/headlinesFragment"
-        android:name="dev.dslam.daniyarsnews.ui.fragments.HeadlinesFragment"
+        android:name="dev.dslam.daniyarsnews.fragments.HeadlinesFragment"
         android:label="fragment_headlines"/>
 
     <fragment
         android:id="@+id/everythingFragment"
-        android:name="dev.dslam.daniyarsnews.ui.fragments.EverythingFragment"
+        android:name="dev.dslam.daniyarsnews.fragments.EverythingFragment"
         android:label="fragment_everything"/>
 
 </navigation>

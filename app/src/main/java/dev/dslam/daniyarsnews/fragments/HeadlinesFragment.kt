@@ -1,4 +1,4 @@
-package dev.dslam.daniyarsnews.ui.fragments
+package dev.dslam.daniyarsnews.fragments
 
 import androidx.fragment.app.Fragment
 
