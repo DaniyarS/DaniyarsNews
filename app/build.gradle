@@ -50,14 +50,21 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     //Dagger + Hilt
-    implementation 'com.google.dagger:dagger:2.40.5'
-    implementation("com.google.dagger:hilt-android:2.38.1")
-    kapt 'com.google.dagger:dagger-compiler:2.40.5'
-    kapt 'com.google.dagger:hilt-android-compiler:2.40.5'
+    implementation "com.google.dagger:hilt-android:${hilt_version}"
+    kapt "com.google.dagger:hilt-compiler:${hilt_version}"
+
+    //implementation 'com.google.dagger:dagger:2.40.5'
+    //implementation("com.google.dagger:hilt-android:2.38.1")
+    //implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
+    //kapt 'com.google.dagger:dagger-compiler:2.40.5'
+    //kapt 'com.google.dagger:hilt-android-compiler:2.40.5'
+    //kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
     // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    def lifecycle = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycle}"
+    implementation "androidx.fragment:fragment-ktx:1.4.0"
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -71,4 +78,9 @@ dependencies {
     //Room
     implementation 'androidx.room:room-runtime:2.4.0'
     kapt 'androidx.room:room-compiler:2.4.0'
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

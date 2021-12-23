@@ -8,5 +8,4 @@
         android:id="@+id/everythingFragment"
         android:title="@string/everything_label"
         android:icon="@drawable/ic_baseline_dehaze_24"/>
-
 </menu>

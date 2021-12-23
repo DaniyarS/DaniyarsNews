@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
     app:startDestination="@id/headlinesFragment">
-
     <fragment
         android:id="@+id/headlinesFragment"
         android:name="dev.dslam.daniyarsnews.fragments.HeadlinesFragment"
@@ -13,5 +12,4 @@
         android:id="@+id/everythingFragment"
         android:name="dev.dslam.daniyarsnews.fragments.EverythingFragment"
         android:label="fragment_everything"/>
-
 </navigation>
