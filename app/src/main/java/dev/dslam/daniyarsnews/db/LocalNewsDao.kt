@@ -9,7 +9,7 @@ import dev.dslam.daniyarsnews.models.Article
 @Dao
 interface LocalNewsDao {
     @Query("SELECT * FROM articles")
-    fun getFavorite(): List<Article>
+    fun getFavorite(): List<Article>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertOnArticle(article: Article)

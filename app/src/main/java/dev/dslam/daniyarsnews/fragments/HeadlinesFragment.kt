@@ -6,18 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import dev.dslam.daniyarsnews.Constants
 import dev.dslam.daniyarsnews.viewmodels.HeadlinesFragmentViewModel
 
-@Module
-@InstallIn(SingletonComponent::class)
+@AndroidEntryPoint
 class HeadlinesFragment : Fragment() {
 
     private val search = "bitcoin"
+    private val viewModel by viewModels<HeadlinesFragmentViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +29,6 @@ class HeadlinesFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        val viewModel: HeadlinesFragmentViewModel = ViewModelProvider(this)[HeadlinesFragmentViewModel::class.java]
         viewModel.getHeadlineObserver().observe(viewLifecycleOwner, {
             if (!it.isNullOrEmpty()) {
                 Toast.makeText(this.requireContext(), "Данные получены", Toast.LENGTH_LONG).show()
