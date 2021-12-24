@@ -4,12 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.dslam.daniyarsnews.models.Article
-import dev.dslam.daniyarsnews.repository.NewsRepository
+import dev.dslam.daniyarsnews.repository.NewsRepos
 import javax.inject.Inject
 
 @HiltViewModel
 class EverythingFragmentViewModel @Inject constructor(
-    private val repository: NewsRepository
+    private val repository: NewsRepos
 ) : ViewModel() {
     private var everythingList: MutableLiveData<List<Article>> = MutableLiveData()
 

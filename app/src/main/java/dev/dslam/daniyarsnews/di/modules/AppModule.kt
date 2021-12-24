@@ -1,4 +1,4 @@
-package dev.dslam.daniyarsnews.di
+package dev.dslam.daniyarsnews.di.modules
 
 import android.app.Application
 import dagger.Module

@@ -10,15 +10,18 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class NewsRepoImpl @Inject constructor(private val newsApiService: NewsApiService,
-                                       private val localNewsDao: LocalNewsDao) : NewsRepos {
+class NewsRepoImpl @Inject constructor(
+    private val newsApiService: NewsApiService,
+    private val localNewsDao: LocalNewsDao
+) : NewsRepos {
 
     override fun retrieveHeadline(
         topHeadlinesList: MutableLiveData<List<Article>>,
         search: String,
         apiKey: String
     ) {
-        val call: Call<ApiResponse> = newsApiService.getHeadlineNewses(topic = search, apiKey = apiKey)
+        val call: Call<ApiResponse> =
+            newsApiService.getHeadlineNewses(topic = search, apiKey = apiKey)
         call.enqueue(object : Callback<ApiResponse> {
 
             //Сперва пытаемся получить данные из сети, если не получилось показываем лайкнутые

@@ -1,9 +1,7 @@
 package dev.dslam.daniyarsnews.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,15 +15,9 @@ class EverythingFragment : Fragment() {
     private val search = "bitcoin"
     private val viewModel by viewModels<EverythingFragmentViewModel>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initViewModel()
-
-        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     private fun initViewModel() {

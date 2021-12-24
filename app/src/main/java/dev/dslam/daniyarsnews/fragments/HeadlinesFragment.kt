@@ -1,9 +1,8 @@
 package dev.dslam.daniyarsnews.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,19 +16,18 @@ class HeadlinesFragment : Fragment() {
     private val search = "bitcoin"
     private val viewModel by viewModels<HeadlinesFragmentViewModel>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        Toast.makeText(this.requireContext(), "initViewModel", Toast.LENGTH_SHORT).show()
         initViewModel()
-
-        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     private fun initViewModel() {
+        Log.d("initViewModel", "ViewModel Start")
+        Toast.makeText(this.requireContext(), "initViewModel", Toast.LENGTH_SHORT).show()
         viewModel.getHeadlineObserver().observe(viewLifecycleOwner, {
+            Log.d("initViewModel", it.toString())
             if (!it.isNullOrEmpty()) {
                 Toast.makeText(this.requireContext(), "Данные получены", Toast.LENGTH_LONG).show()
             } else {
